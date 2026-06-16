@@ -10,7 +10,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 from jotform import JotformAPIClient
 from http.client import IncompleteRead
 from requests.exceptions import ConnectionError as RequestsConnectionError
-
+from gspread.exceptions import WorksheetNotFound
 # ---------------- CONFIG ----------------
 API_KEY          = os.environ['API_KEY']
 FORM_ID          = os.environ['FORM_ID']
@@ -29,7 +29,7 @@ scope = [
     'https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive'
 ]
-creds  = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS, scope)
+creds  = ServiceAccountCredentials.from_json_keyfile_name(CREDS_FILE, scope)
 client = gspread.authorize(creds)
 spreadsheet = client.open(SPREADSHEET_NAME)
 try:
