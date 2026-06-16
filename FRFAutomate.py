@@ -15,7 +15,7 @@ from requests.exceptions import ConnectionError as RequestsConnectionError
 API_KEY          = os.environ['API_KEY']
 FORM_ID          = os.environ['FORM_ID']
 SPREADSHEET_NAME = os.environ['SPREADSHEET_NAME']
-WORKSHEET_NAME   = os.environ['WORKSHEET_NAME_TDR']
+WORKSHEET_NAME   = os.environ['WORKSHEET_NAME']
 
 CREDS_FILE          = os.environ.get('CREDS_FILE', 'credentials.json')
 BASE_URL            = 'https://pw.jotform.com/API'
